@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #071739 #ffffff;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #071739;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.App .current-song .img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #000000;
+  color: #071739;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Rubik";
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 381px;
+  max-width: 381px;
+  margin-top: 10px;
+  padding: 0 5px;
+  border-radius: 20px;
+  font-weight: 100;
+  box-shadow: 0px 0px 70px 0px #274684;
+  background: #071739;
+  overflow: hidden;
+  animation: shadow 5s linear infinite ease-in;
+  transition: animation 5s ease-in;
+}
+.App .current-song {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px 0px;
+  border-radius: 20px;
+  color: #071739;
+  background: #fff;
+}
+.App .current-song .img-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 270px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px 0px rgba(39, 70, 132, 0.7);
+}
+.App .current-song .img-wrap img {
+  object-fit: cover;
+}
+.App .current-song .song-name {
+  margin-top: 30px;
+  font-size: 22px;
+}
+.App .current-song .song-autor {
+  color: #709fdc;
+}
+.App .current-song .time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 240px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.App .current-song #timeline {
+  position: relative;
+  margin: 0 auto;
+  width: 240px;
+  height: 5px;
+  background: #709fdc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.App .current-song #timeline #playhead {
+  position: relative;
+  z-index: 2;
+  width: 0;
+  height: 5px;
+  border-radius: 5px;
+  background: #071739;
+}
+.App .current-song #timeline .hover-playhead {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 0;
+  height: 5px;
+  opacity: 0;
+  border-radius: 5px;
+  background: #274684;
+  transition: opacity 0.3s;
+}
+.App .current-song .controls {
+  margin-top: 10px;
+}
+.App .current-song .controls button {
+  color: #071739;
+  border-radius: 50%;
+  margin: 15px;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  background: 0;
+}
+.App .current-song .controls .prev-next {
+  width: 35px;
+  height: 35px;
+}
+.App .current-song .controls .prev-next:hover {
+  transform: scale(1.2);
+}
+.App .current-song .controls .play {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e2e2e2;
+  outline: none;
+}
+.App .current-song .controls .play:hover {
+  box-shadow: 0px 0px 15px 0px rgba(39, 70, 132, 0.7);
+  left: 0;
+}
+.App .play-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 200px;
+  overflow-y: scroll;
+}
+.App .play-list .track {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.App .play-list .track .track-img {
+  width: 90px;
+  object-fit: cover;
+  height: 70px;
+  border-radius: 10px;
+}
+.App .play-list .track .track-discr {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  color: #ffffff;
+}
+.App .play-list .track .track-discr .track-name {
+  font-size: 17px;
+  margin-top: 8px;
+}
+.App .play-list .track .track-discr .track-author {
+  margin-top: 8px;
+  font-weight: 300;
+  color: #709fdc;
+}
+.App .play-list .track .track-duration {
+  min-width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.App .play-list .current-audio {
+  background: #274684;
+  box-shadow: 0px 0px 15px 0px #274684;
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0px 0px 60px 0px #274684;
+  }
+  50% {
+    box-shadow: 0px 0px 40px 0px #274684;
+  }
+  90% {
+    box-shadow: 0px 0px 70px 0px #274684;
+  }
+}/*# sourceMappingURL=style.css.map */

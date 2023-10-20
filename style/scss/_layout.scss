@@ -1,0 +1,210 @@
+$white-color : #ffffff;
+$black-color : #000000;
+$music-list-bg : #071739;
+$selected-music-bg : #274684;
+$tertiary-color : #DBDFEA;
+$wheat-color : #FFEAD2;
+
+body {
+    background-color: $black-color;
+    color: #071739;
+    @include d-flex(center, center);
+    flex-direction: column;
+    font-family: 'Rubik';
+}
+
+.App {
+    @include d-flex(center, center);
+    flex-direction: column;
+    width: 381px;
+    max-width: 381px;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 20px;
+    font-weight: 100;
+    box-shadow: 0px 0px 70px 0px #274684;
+    background: #071739;
+    overflow: hidden;
+    animation: shadow 5s linear infinite ease-in;
+    transition: animation 5s ease-in;
+
+    .current-song {
+        @include d-flex(normal, center);
+        flex-direction: column;
+        background-color: $white-color;
+        width: 100%;
+        padding: 20px 0px;
+        border-radius: 20px;
+        color: #071739;
+        background: #fff;
+
+        .img-wrap {
+            position: relative;
+            margin: 0 auto;
+            width: 270px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px 0px rgba(39, 70, 132, 0.7);
+
+            img {
+                @extend %fullspace;
+                object-fit: cover;
+            }
+        }
+
+        .song-name {
+            margin-top: 30px;
+            font-size: 22px;
+        }
+
+        .song-autor {
+            color: #709fdc;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 240px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        #timeline {
+            position: relative;
+            margin: 0 auto;
+            width: 240px;
+            height: 5px;
+            background: #709fdc;
+            border-radius: 5px;
+            cursor: pointer;
+
+            #playhead {
+                position: relative;
+                z-index: 2;
+                width: 0;
+                height: 5px;
+                border-radius: 5px;
+                background: #071739;
+            }
+
+            .hover-playhead {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                width: 0;
+                height: 5px;
+                opacity: 0;
+                border-radius: 5px;
+                background: #274684;
+                transition: opacity 0.3s;
+            }
+        }
+
+        .controls {
+            margin-top: 10px;
+
+            button {
+                color: #071739;
+                border-radius: 50%;
+                margin: 15px;
+                font-size: 18px;
+                text-align: center;
+                transition: 0.2s;
+                cursor: pointer;
+                border: none;
+                background: 0;
+            }
+
+            .prev-next {
+                width: 35px;
+                height: 35px;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            .play {
+                width: 50px;
+                height: 50px;
+                border: 1px solid #e2e2e2;
+                outline: none;
+
+                &:hover {
+                    box-shadow: 0px 0px 15px 0px rgba(39, 70, 132, 0.7);
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    .play-list {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        height: 200px;
+        overflow-y: scroll;
+
+        .track {
+            @include d-flex(normal, center);
+            margin-bottom: 10px;
+            border-radius: calc(20px - 10px);
+            border: 1px solid transparent;
+            transition: 0.3s;
+            cursor: pointer;
+
+            .track-img {
+                width: 90px;
+                object-fit: cover;
+                height: 70px;
+                border-radius: calc(20px - 10px);
+            }
+
+            .track-discr {
+                margin-left: 15px;
+                display: flex;
+                flex-direction: column;
+                min-width: 190px;
+                color: $white-color;
+
+                .track-name {
+                    font-size: 17px;
+                    margin-top: 8px;
+                }
+
+                .track-author {
+                    margin-top: 8px;
+                    font-weight: 300;
+                    color: #709fdc;
+                }
+            }
+
+            .track-duration {
+                min-width: 40px;
+                margin-left: 10px;
+                margin-right: 10px;
+                font-weight: 500;
+                color: $white-color;
+            }
+        }
+
+        .current-audio {
+            background: #274684;
+            box-shadow: 0px 0px 15px 0px #274684;
+        }
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0px 0px 60px 0px #274684;
+    }
+    50% {
+        box-shadow: 0px 0px 40px 0px #274684;
+    }
+    90% {
+        box-shadow: 0px 0px 70px 0px #274684;
+    }
+}

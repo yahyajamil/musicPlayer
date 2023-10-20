@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player🎵</title>
+    <!-- style -->
+    <link rel="stylesheet" href="style/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap">
+</head>
+
+<body>
+
+    <section class="App">
+        <div class="play-list">
+        </div>
+        <div class="current-song">
+            <audio class="audioElem">
+                <source src="assets/musics/music1.mp3" type="audio/ogg">
+                "Your browser does not support the audio element."
+            </audio>
+            <div class="img-wrap">
+                <img src="assets/images/images.jpg" alt="cover" class="cover">
+            </div>
+            <span class="song-name"></span>
+            <span class="song-autor"></span>
+            <div class="time">
+                <div class="current-time">0:00</div>
+                <div class="end-time"></div>
+            </div>
+            <div id="timeline">
+                <div id="playhead"></div>
+                <div class="hover-playhead" data-time="1.26" style="width: 0px;"></div>
+            </div>
+            <div class="controls">
+                <button class="prev prev-next current-btn">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="play current-btn">
+                    <i class="fas fa-play play-icon"></i>
+                </button>
+                <button class="next prev-next current-btn">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+        </div> 
+
+        
+    </section>
+    
+
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
